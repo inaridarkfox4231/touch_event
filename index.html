@@ -3,11 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>タッチイベント</title>
+    <script type = "text/javascript" src = "./audio_box/audiojs/audio.min.js"></script>
     <meta name = "viewport" content = "width = device-width">
   </head>
   <body>
+    <div align = "center">
 <embed width = "200" height = "50" src = "fox_Sound1.wav" type = "audio/wav"
-loop = "true" repeat = "true" autostart = "false"></>
+  loop = "true" repeat = "true" autostart = "false">
+  <div style = "display:none">
+<audio src = "fox_Sound1.wav" preload = "auto" loop = "true"></audio>
+<audio src = "./sounds/u-50_C4.wav" preload = "auto" loop = "true"></audio>
+<audio src = "./sounds/u-50_C4sharp.wav" preload = "auto" loop = "true"></audio>
+<audio src = "./sounds/u-50_D4.wav" preload = "auto" loop = "true"></audio>
+</div>
+  <br><button id = "fox">おきつね</button>
+  <br><button id = "C4">ド</button>
+  <button id = "C4sharp">ド#</button>
+  <button id = "D4">レ</button>
+</div>
 <script src = "./src/touch_1.js"></script>
   </body>
 </html>
