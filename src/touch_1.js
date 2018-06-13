@@ -24,4 +24,11 @@ audiojs.events.ready(function(){
    document.getElementById("D4").addEventListener("touchend", function(e){
       if(play_on[3]){ sound_D4.pause(); play_on[3] = false; }
    }, false)
+   document.addEventListener("keydown", function(e){
+      if(!play_on[3] && e.keyCode == 88){ sound_D4.play(); play_on[3] = true; }
+   }, false)
+   document.addEventListener("keyup", function(e){
+      if(play_on[3] && e.keyCode == 88){
+         sound_D4.pause(); play_on[3] = false; }
+   }, false)
 });
