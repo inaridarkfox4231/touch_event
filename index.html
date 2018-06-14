@@ -2,25 +2,30 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>タッチイベント</title>
-    <script type = "text/javascript" src = "./audio_box/audiojs/audio.min.js"></script>
+    <title>問題集(試作)</title>
     <meta name = "viewport" content = "width = device-width">
+    <style>
+    * {padding: 0; margin: 0}
+        canvas { background: #fff; display: block; margin: 0; auto;}
+    </style>
+   <style type = "text/css">
+   input { width:70px; height: 40px; font-size:30px; }
+   </style>
   </head>
-  <body>
+  <body onload = "init()">
     <div align = "center">
-<embed width = "200" height = "50" src = "fox_Sound1.wav" type = "audio/wav"
-  loop = "true" repeat = "true" autostart = "false">
-  <div style = "display:none">
-<audio src = "fox_Sound1.wav" preload = "auto" loop = "true"></audio>
-<audio src = "./sounds/u-50_C4.wav" preload = "auto" loop = "true"></audio>
-<audio src = "./sounds/u-50_C4sharp.wav" preload = "auto" loop = "true"></audio>
-<audio src = "./sounds/u-50_D4.wav" preload = "auto" loop = "true"></audio>
-</div>
-  <br><button id = "fox">おきつね</button>
-  <br><button id = "C4">ド</button>
-  <button id = "C4sharp">ド#</button>
-  <button id = "D4">レ</button>
-</div>
-<script src = "./src/touch_1.js"></script>
+      <font size = "4">
+インターバル問題（dim = o, aug = +）
+      </font>
+    <canvas id = "Query" width = "160" height = "160"></canvas>
+    <input id = "interval" type = "text" size = "5" maxlength = "2" height = "20"></input>
+   <br><br>
+    <button><font id = "nextQuery" size = "6"></font></button>
+    <br>
+    <font id = "ans" size = "6"></font>
+    <font id = "correct" size = "6" color = "blue"></font>
+    <font id = "wrong" size = "6" color = "red"></font>
+    </div>
+<script src = "./src/code.js"></script>
   </body>
 </html>
