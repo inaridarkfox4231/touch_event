@@ -28,7 +28,7 @@ for(var i = 0; i < 119; i++){
     queryId.push(seq[k]);
     seq[k] = seq[118 - i];
 }
-for(var i = 0; i < 119; i++){
+for(var i = 0; i < 20; i++){
    console.log(queryId[i]);
 }
 
@@ -67,14 +67,14 @@ document.getElementById("nextQuery").addEventListener("click", function(e){
          document.getElementById("correct").innerText = "";
          document.getElementById("wrong").innerText = "";
          document.getElementById("nextQuery").innerText = "解答する";
-         set_img(x);
+         set_img(queryId[x]);
          answered = false;
          return;
     }else{
          var s = document.getElementById("interval").value;
          console.log(s);
          if(s.length < 2){ return; }
-         show_ans(x, s == ans[x]);
+         show_ans(queryId[x], s == ans[queryId[x]]);
          answered = true;
          document.getElementById("nextQuery").innerText = "次の問題";
     }
