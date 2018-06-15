@@ -28,6 +28,7 @@ for(var i = 0; i < 119; i++){
     queryId.push(seq[k]);
     seq[k] = seq[118 - i];
 }
+//テスト用
 for(var i = 0; i < 20; i++){
    console.log(queryId[i]);
 }
@@ -39,7 +40,7 @@ function get_ctx(){
     var ctx = canvas.getContext("2d");
     return ctx;
 }
-
+// 正誤出力
 function show_ans(i, flag){
     document.getElementById("ans").innerText = ans[i];
     if(flag){
@@ -48,7 +49,7 @@ function show_ans(i, flag){
         document.getElementById("wrong").innerText = "　不正解！";
     }
 }
-
+// 問題の画像生成
 function set_img(i){
    var ctx = get_ctx();
    ctx.drawImage(white, 0, 0);
@@ -58,28 +59,42 @@ function set_img(i){
 var x = -1;
 var answered = true;
 
+// クリックによる問題送り、解答
 document.getElementById("nextQuery").addEventListener("click", function(e){
-    if(answered){
-         x += 1;
-         if(x == 118){ x = 0; }
-         document.getElementById("interval").value = "";
-         document.getElementById("ans").innerText = "";
-         document.getElementById("correct").innerText = "";
-         document.getElementById("wrong").innerText = "";
-         document.getElementById("nextQuery").innerText = "解答する";
-         set_img(queryId[x]);
-         answered = false;
-         return;
-    }else{
-         var s = document.getElementById("interval").value;
-         console.log(s);
-         if(s.length < 2){ return; }
-         show_ans(queryId[x], s == ans[queryId[x]]);
-         answered = true;
-         document.getElementById("nextQuery").innerText = "次の問題";
+    if(answered){ makeNextQuery();
+    }else{ judge(); }
+})
+// エンターキーによる問題送り、解答
+document.addEventListener("keydown", function(e){
+    if(e.keyCode == 13){
+        if(answered){ makeNextQuery();
+        }else{ judge(); }
     }
 })
 
+// 次の問題を生成する関数
+function makeNextQuery(){
+    x += 1;
+    if(x == 119){ x = 0; }
+    document.getElementById("interval").value = "";
+    document.getElementById("interval").focus();
+    document.getElementById("ans").innerText = "";
+    document.getElementById("correct").innerText = "";
+    document.getElementById("wrong").innerText = "";
+    document.getElementById("nextQuery").innerText = "解答する";
+    set_img(queryId[x]);
+    answered = false;
+}
+// 入力欄の正誤判定を行う関数
+function judge(){
+    var s = document.getElementById("interval").value;
+    if(s.length < 2){ return; }
+    show_ans(queryId[x], s == ans[queryId[x]]);
+    answered = true;
+    document.getElementById("nextQuery").innerText = "次の問題";
+}
+
+//初期化
 function init(){
     document.getElementById("nextQuery").innerText = "はじめる";
 }
