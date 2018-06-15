@@ -1,3 +1,5 @@
-# touch_event
-タッチイベントで実験してみる  
-→https://inaridarkfox4231.github.io/touch_event/ 
+# touch_event  
+→https://inaridarkfox4231.github.io/touch_event/   
+　@Fox_Dot_Lab さんがインターバルの問題集あったらいいなって言ってたので何となく作ってみた・・  
+　クリックしてスタート、エンターキーでもスタートできる。テキストボックスにM3や+4などのインターバル記号を入れてクリックまたはエンターキーを押すと正誤判定される仕組みです。問題はMusicplanzさんの公式ウェブサイト→
+後で作る。。
