@@ -1,4 +1,4 @@
-# touch_event  
+# インターバル問題集 
 →https://inaridarkfox4231.github.io/touch_event/   
 　@Fox_Dot_Lab さんがインターバルの問題集あったらいいなって言ってたので何となく作ってみた・・  
 　クリックしてスタート、エンターキーでもスタートできる。テキストボックスにM3や+4などのインターバル記号を入れてクリックまたはエンターキーを押すと正誤判定される仕組みです。問題はMusicplanzさんの公式ウェブサイト→http://musicplanz.org/academy/textbooks の音楽理論１の第6回の27ページの問題をそのまま使わせていただいています。  
